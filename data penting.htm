@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengumuman nilai ukuran ke sangean siswa arsyad</title>
+
+<style>
+body {
+
+    font-family: 'Segoe UI', sans-serif;
+    background: #1e1f26;
+    color: #e4e4e4;
+    margin: 0;
+    padding: 30px;
+}
+
+.container{
+    background: #2a2c36;
+    max-width: 950px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+h1{
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-size: 38px;
+}
+
+h2{
+    color: #a7adb8;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+input{
+    width: 90%;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #444857;
+    background: #23252d;
+    color: white;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+input:focus{
+    outline: none;
+    border-color: #6aa6ff;
+    box-shadow: 0 0 12px rgba(106,166,255,0.25);
+}
+
+button{
+    background: #4d7cff;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover{
+    background: #3b69e8;
+}
+
+.hasil-box{
+    display:flex;
+    gap:35px;
+    margin-top:40px;
+    align-items:flex-start;
+}
+
+.text-box{
+    flex:1;
+}
+
+.text-box p{
+    margin: 14px 0;
+    line-height: 1.7;
+    font-size: 18px;
+    color: #d7dbe3;
+}
+
+.text-box strong{
+    color: #ffffff;
+}
+
+.lulus{
+    display:inline-block;
+    background:#3a4255;
+    color:#8cb4ff;
+    padding:8px 18px;
+    border-radius:10px;
+    font-size:20px;
+    font-weight:bold;
+    margin:15px 0;
+}
+.lulus.hard{
+    background: #ff4d4d;
+    color: #111;
+}
+
+.lulus.middle{
+    background: #ffd54a;
+    color: #222;
+}
+
+.lulus.low{
+    background: #4cd964;
+    color: #111;
+}
+
+.foto-box img{
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border-radius:18px;
+    border: 2px solid #444857;
+    box-shadow:0 8px 20px rgba(0,0,0,0.35);
+}
+.foto-box.hard img{
+    box-shadow:0 0 25px rgba(255,77,77,0.6);
+}
+
+.foto-box.middle img{
+    box-shadow:0 0 25px rgba(255,213,74,0.6);
+}
+
+.foto-box.low img{
+    box-shadow:0 0 25px rgba(76,217,100,0.6);
+}
+
+.footer{
+    text-align:center;
+    margin-top:40px;
+    color:#8e95a3;
+    font-size:14px;
+}
+.top-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.top-logo{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top-header">
+
+    <div>
+        <h1>PENGUMUMAN NILAI SAGNE</h1>
+        <h2>hanya untuk cucu ucay<br>*website ini di buat oleh saya sendiri (yedi)</h2>
+    </div>
+
+    <img src="yedi.jpeg" class="top-logo">
+
+</div>
+
+    <input type="text" id="nama" placeholder="Masukkan Nama ">
+    <input type="text" id="nisn" placeholder="Masukkan Password">
+    <br>
+    <button onclick="cekKelulusan()">LIHAT HASIL</button>
+
+    <div id="hasil" class="result"></div>
+</div>
+
+</body>
+<div class="footer">
+    <p>
+    Jika ada perbedaan hasil pengumuman Online dan manual maka yang menjadi acuan adalah dokumen kelulusan yang telah disahkan dan ditandatangani oleh Kepala suku.
+    </p>
+</div>
+
+<script>
+const dataSiswa = [
+{nama:"FAREL", nisn:"123", jk:"king terabox", status:"HARD", nilai:"90%", ket:"SANGAT sangean", pesan:"ananda farel coba kurang-kurangi buka teraboxnya atau nanti bisa menyebabkan gagal eragsi, dan beliau ini di kenal memiliki banyak koleksi link terabox, di kabarkan ia membeli hp baru karena penyimpanan hp lamanya telah penuh", foto:"farel.jpg.jpeg"},
+{nama:"FAWWAZ ", nisn:"123", jk:"king videy", status:"MIDDLE", nilai:"79%", ket:"MIDLLE SAnge", pesan:"di kabarkan dia memiliki ribuan link videy, dan sudah menonton santai pakcik sebanyak 15 kali nonstop. Dan berikut adalah link andalan beliau - https://videy.co/v?id=olv3mL3E1",foto:"fawwaz.jpg.jpeg"},
+{nama:"DAVINO ", nisn:"123", jk:"mau tidur atau di tidurin?", status:"HARD", nilai:"89%", ket:"SANGAT SANGE", pesan:"di ketahui ia sering typo ketika berbicara dan sangat pelupa yang dimana itu adalah tanda-tanda efek dari PMO, saksi mengatakan dia sering tidur dimana ketika ia bangun mukanya sangat segar seperti baru selesai ngaloco hmmm mencurigakan", foto:"davino.jpg.jpeg"},
+{nama:"LUTHFI", nisn:"123", jk:"bos sawit", status:"MIDDLE", nilai:"75%", ket:"CUKUP SANGE", pesan:"saksi mengatakan ia adalah entitas chat yang dimana 24 selalu mengecht, entitas ini sering di kabarkan suka menonton videy bersama haqi, hati-hati jika bertemu dengan beliau ini bisa hamil tiba tiba, langganan LC nya adalah rikil", foto:"luthfi.jpg.jpeg"},
+{nama:"FARBUK", nisn:"123", jk:"venom", status:"MIDDLE", nilai:"58%", ket:"CUKUP SANGE", pesan:"jarang sange namun ketika menyebut nama inisial A dia langsung senyum-senyum sendiri, di tambah ada tombol venom yang dapat mengubahnya menjadi lebih agresif", foto:"farbuk.jpg.jpeg"},
+{nama:"RAFI", nisn:"132", jk:"SANGE FINAL BOS", status:"HARD", nilai:"99%", ket:"SANGE FINAL BOS", pesan:"di ketahui entitas ini sering membahas mamak yado dan sering sange dan membayang kan tidur dengan nya, hati hati jika lewat di depan nya!! walaupun anda tidak salah bisa jadi orangtua anda menjadi target berikutnya", foto:"rafi.jpg.jpeg"},
+{nama:"MUNADIL", nisn:"123", jk:"anak baik", status:"LOW", nilai:"13%", ket:"SANGAT MEMUASKAN", pesan:"anak baik no comment, tapi bebrapa korban mengatakan kalau di rumah habis dia sama beliau ni, tetap hati hati",foto:"munadil.jpg.jpeg"},
+{nama:"ADLY", nisn:"123", jk:"pria baik", status:"LOW", nilai:"20%", ket:"tidak sangean", pesan:"Ananda adly TIDAK SANGEAN, keren dan baik, jarang ngomong kotor dan menghina orang tua, dan menghindari rokok karna akan tes kedinasan", foto:"adly.jpg.jpeg"},
+{nama:"YADO", nisn:"123", jk:"cat women", status:"LOW", nilai:"43%", ket:"saksi mengatakan beliau jarang sange namun ketika melihat kucing dia langsung birahuy dan ingin mengewey", foto:"yado.jpg.jpeg"},
+{nama:"AFRAND", nisn:"132", jk:"L", status:"MIDDLE", nilai:"88%", ket:"siscon", pesan:"diketahui dan di duga beliau adalah pencita adik sendiri sering, alasannya karena setiap selesai pulang sekolah ia di duga mengewe adiknya sebagai pelampiasan nafsunya", foto:"afrand.jpg.jpeg"}
+];
+
+function cekKelulusan() {
+    let namaInput = document.getElementById("nama").value.toLowerCase();
+    let nisnInput = document.getElementById("nisn").value;
+
+    let hasil = dataSiswa.find(s =>
+        s.nama.toLowerCase().includes(namaInput) && s.nisn === nisnInput
+    );
+
+    let output = document.getElementById("hasil");
+
+    if (hasil) {
+            output.innerHTML = `
+
+<div class="hasil-box">
+
+    <div class="text-box">
+
+        <p><strong>Nama:</strong> ${hasil.nama}</p>
+        <p><strong>password:</strong> ${hasil.nisn}</p>
+        <p><strong>code name:</strong> ${hasil.jk}</p>
+
+        <p class="lulus ${hasil.status.toLowerCase()}">
+    ${hasil.status}
+</p>
+
+
+        <p><strong>TINGKAT BIRAHI:</strong> ${hasil.nilai}</p>
+        <p><strong>Keterangan:</strong> ${hasil.ket}</p>
+        <p><strong>pesan:</strong> ${hasil.pesan}</p>
+
+    </div>
+
+    <div class="foto-box ${hasil.status.toLowerCase()}">
+        <img src="${hasil.foto}" alt="${hasil.nama}">
+    </div>
+
+</div>
+        `;
+    } else {
+        output.innerHTML = `<p style="color:red;">Data tidak ditemukan. Periksa kembali Nama dan password.</p>`;
+    }
+}
+
+</script>
+
+</body>
+</html>
